@@ -70,5 +70,5 @@ class FollowViewSet(mixins.CreateModelMixin,
         return self.request.user.follower.all()
 
     def perform_create(self, serializer):
-        """Создает подписку, где подписчиком является текущий пользователь."""
+        """Создает подписку где подписчиком является текущий пользователь."""
         serializer.save(user=self.request.user)
