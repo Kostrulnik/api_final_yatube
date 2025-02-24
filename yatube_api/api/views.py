@@ -67,7 +67,6 @@ class FollowViewSet(mixins.CreateModelMixin,
     search_fields = ('following__username',)
 
     def get_queryset(self):
-        """Возвращает queryset c подписками для текущего пользователя."""
         return self.request.user.follower.all()
 
     def perform_create(self, serializer):
