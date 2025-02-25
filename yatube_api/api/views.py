@@ -40,8 +40,7 @@ class CommentViewSet(viewsets.ModelViewSet):
 
     def get_post(self):
         """Возвращает объект текущей записи."""
-        post_id = self.kwargs.get('post_id')
-        return get_object_or_404(Post, pk=post_id)
+        return get_object_or_404(Post, pk=self.kwargs.get('post_id'))
 
     def get_queryset(self):
         """Возвращает queryset c комментариями для текущей записи."""

@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
+from .constants import TITLE_MAX_LENGTH
+
 User = get_user_model()
 
 
@@ -24,7 +26,7 @@ class Post(models.Model):
 
 
 class Group(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=TITLE_MAX_LENGTH)
     slug = models.SlugField(unique=True)
     description = models.TextField()
 
